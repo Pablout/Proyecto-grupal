@@ -13,22 +13,28 @@
 // La informacion de las variables procesadas
 // Salida: 
 
-const read = require("prompt-sync")();
-const write = console.log
-
+const read = require('prompt-sync')();
+const write = console.log;
 
 
 function verificarUnaSolaLetra() {
-    let caracter = " "
-    write("Ingrese un caracter:")
-    caracter = (read())
-    if (caracter >= "a" && caracter<= "ab") {
-       write( "El caracter de la cadena es de una letra")
-       write(caracter)
-    } else {
-       write ("El caracter de la cadena no es de una letra")
-    }
-    
- }
- 
- verificarUnaSolaLetra()
+   let palabra = " "
+   write("Ingrese un caracter:")
+   palabra = (read())
+   caracter = palabra.charAt(palabra.length-1)
+   if ((caracter=="a" || caracter=="b" || caracter=="c" || caracter=="d" || caracter=="e"|| caracter=="f"
+   || caracter=="g"|| caracter=="h"|| caracter=="i"|| caracter=="j"|| caracter=="k"|| caracter=="l"|| caracter=="m"
+   || caracter=="o"|| caracter=="p"|| caracter=="q"|| caracter=="r"|| caracter=="s"|| caracter=="t"|| caracter=="u"
+   || caracter=="v"|| caracter=="w"|| caracter=="x"|| caracter=="y"|| caracter=="z")) {
+      write( "El caracter de la cadena es de una letra")
+      write(caracter)
+   } else {
+      write ("El caracter de la cadena no es de una letra")
+      write(caracter)
+   }
+   write("gracias por ingresar")
+}
+
+verificarUnaSolaLetra()
+
+

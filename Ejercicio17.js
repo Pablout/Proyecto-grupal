@@ -15,12 +15,18 @@
 
 const read = require("prompt-sync")()
 const write = console.log
-const cadena = (read("Ingrese una cadena: "))
 
-
-if (!isNaN(parseInt(cadena[0]))) {
-
-    write("El primer carácter de la cadena es un dígito:")
-} else {
-    write("El primer carácter de la cadena no es un dígito.")
-}
+function verificarUnSoloDigito() {
+    let caracter = 0
+    write("Ingrese un caracter:")
+    caracter = parseFloat(read())
+    if (caracter >= -9 && caracter<= 9) {
+       write( "El caracter de la cadena es un dígito")
+       write(caracter)
+    } else {
+       write ("El caracter de la cadena no es un dígito")
+    }
+    write("gracias por ingresar")
+ }
+ 
+ verificarUnSoloDigito()

@@ -3,30 +3,28 @@
 //BOSQUEJO
 // Analisis de requerimentos:
 // los datos o variables del problema
-// Entrada:  a=2,b=3,c=4,resultado=0
+// Entrada:  a=0,b=0,c=0,resultado=0
 // Los calculos o procesos que se hacen con las variables
 // Proceso:  resultado=((Math.sin(a) + Math.cos(b)) * (Math.trunc(a) % 2)) + (Math.sqrt(Math.pow(a, 3)) / (a * b + c))
 // La informacion de las variables procesadas
 // Salida:  escribir "La respuesta es ",resultado
 
+const read = require("prompt-sync")()
+const write = console.log
 
+function matemática(){
+    let a=0,b=0,c=0,resultado=0
+    write("ingrese un valor para A")
+    a=parseInt(read())
+    write("ingrese un valor para B")
+    b=parseInt(read())
+    write("ingrese un valor para C")
+    c=parseInt(read())
+    sen=0
+    cos=0 
+    trunc=0
+    resultado=((Math.sin(a) + Math.cos(b)) * (Math.trunc(a) % 2)) + (Math.sqrt(Math.pow(a, 3)) / (a * b + c))
+    write("La respuesta es ",resultado)
 
-let a = 2, b = 3, c = 4
-
-const parteEnteraA = parseInt(a)
-
-const moduloA = parteEnteraA % 2
-
-const senoA = Math.sin(a)
-
-const cosenoB = Math.cos(b)
-
-const raizCubicaA = Math.pow(a, 1/3)
-
-const sumaSenCos = senoA + cosenoB
-
-const productoSenCosMod = sumaSenCos * moduloA
-const resultadoFinal = productoSenCosMod + (raizCubicaA / (a * b + c))
-
-
-console.log("El valor de x es:", resultadoFinal)
+}
+matemática()

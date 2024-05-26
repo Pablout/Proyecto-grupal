@@ -31,26 +31,34 @@ const read = require("prompt-sync")()
 const write = console.log
 
 function calcularSueldo() {
-    const salarioPorHora = 5
-    const horasJornadaNormal = 40
-    const horasExtra = parseFloat(read("Ingrese las horas extra trabajadas: "))
+   
+        let horasTrabajadas=0
+            write ("Ingrese el número de horas trabajadas en la semana: ")
+        horasTrabajadas=parseInt(read())
     
-    let sueldo = 0, sobretiempo = 0, ingresoTotal = 0, seguroSocial = 0, neto = 0
-
-    sueldo = salarioPorHora * horasJornadaNormal
-    if (horasExtra > 0) {
-        sobretiempo = salarioPorHora * 2 * horasExtra
+        pagoHoraNormal=5
+        horasNormales=40
+        porcentajeSeguroSocial=0.10
+    
+        if (horasTrabajadas >= horasNormales) {
+        sueldo = horasTrabajadas * pagoHoraNormal
+        sueldoSobretiempo = horasTrabajadas - horasNormales
+        }else{
+        sueldo = horasNormales * pagoHoraNormal
+        horasExtra = horasTrabajadas - horasNormales
+        sueldoSobretiempo = horasExtra * pagoHoraNormal * 2
+        }
+        
+        ingresoTotal = sueldo + sueldoSobretiempo
+        seguroSocial = ingresoTotal * porcentajeSeguroSocial
+        sueldoNeto = ingresoTotal - porcentajeSeguroSocial
+    
+        write("Horas trabajadas: ", horasTrabajadas)
+        write("Horas extra trabajadas: ", sueldoSobretiempo,"Horas")
+        write("Ingreso total: $", ingresoTotal)
+        write("Seguro social (IESS): $", seguroSocial)
+        write("Sueldo neto a recibir: $", sueldoNeto)
     }
-
-    ingresoTotal = sueldo + sobretiempo
-    seguroSocial = ingresoTotal * 0.10
-    neto = ingresoTotal - seguroSocial
-
-    write("Sueldo: $", sueldo)
-    write("Sobretiempo: $", sobretiempo)
-    write("Ingreso Total: $", ingresoTotal)
-    write("Seguro Social (IESS): $", seguroSocial)
-    write("Neto a Recibir: $", neto)
-}
+    
 
 calcularSueldo()

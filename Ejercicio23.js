@@ -9,9 +9,17 @@
 // La informacion de las variables procesadas
 // Salida: escribir "La cantidad de elementos que tiene la cadena es:",cantidadElementos
 
-const cadena = "Todo en este mundo es temporal"
 
 
-const cantidadElementos = cadena.length
+const read = require("prompt-sync")()
+const write = console.log
 
-console.log("La cantidad de elementos en la cadena es:", cantidadElementos)
+function cadena(){
+    let cadena= " "
+    write("Ingrese algo para la cadena y saber cual es la cantidad de elementos: ")
+    cadena =(read())
+    cantidadElementos = cadena.length
+    write("La cantidad de elementos que tiene la cadena es: ",cantidadElementos)
+    }
+    cadena()
+    

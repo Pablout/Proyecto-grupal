@@ -38,18 +38,35 @@ const write = console.log
 
 function encontrarMayor() {
     
-    const numero1 = parseInt(read("Ingrese el primer número: "))
-    const numero2 = parseInt(read("Ingrese el segundo número: "))
-
-   
-    if (numero1 % 2 === 0 && numero2 % 2 !== 0) {
-       
-        const mayor = parseInt(numero1, numero2)
-        write("El mayor número es:", mayor)
-    } else {
-     
-        write("El primer número no es par o el segundo número no es impar.")
+    let numero1=0,numero2=0
+    write ("Ingrese el primer numero:")
+    numero1=parseFloat(read())
+    write ("Ingrese el segundo numero:")
+    numero2=parseFloat(read())
+    if (numero1>numero2){
+        write("El primer numero es mayor")
+        write(numero1)
+        write(numero2)
+     }else{
+        write("El primer numero es menor")
+        write(numero1)
+        write(numero2)
     }
+    if (numero1%2){
+        write("El primer numero es impar")
+        write(numero1)
+    }else {
+        write("El primer numero es par")
+        write(numero1)
+    }
+    if(numero2%2){
+        write("El segundo numero es impar")
+        write(numero2)
+    }else{
+        write("El segundo numero es par")
+        write(numero2)
+    write("los numeros ingresados son:",numero1,numero2)
+}
 }
 
 encontrarMayor()

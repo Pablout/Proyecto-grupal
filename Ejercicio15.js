@@ -33,21 +33,42 @@
 //    FinSi
 // La informacion de las variables procesadas
 // Salida: 
+const read = require('prompt-sync')();
+const write = console.log;
+
 function valorAleatorio(){
-    let numeros=[]
-    valor=parseInt(Math.random() * 100)
-    console.log(valor)
-    numeros.push(parseInt(Math.random() * 100))
-    numeros.push(parseInt(Math.random() * 100))
-    numeros.push(parseInt(Math.random() * 100))
-    numeros.push(parseInt(Math.random() * 100))
-    numeros.push(parseInt(Math.random() * 100))
-    console.log(numeros)
-    if (numeros [0] > 0 && numeros [0] % 2 ==0) {
-        console.log("El primer valor es par positivo:", numeros[0])
-    } else  {
-        (numeros [4] < 0 && numeros [4] % 3 ==0)
-        console.log("El último valor es impar negativo:", numeros[4])
+    let valor=[]
+    valor= parseInt(Math.random()*100) 
+    valor2= parseInt(Math.random()*100) 
+    valor3= parseInt(Math.random()*100) 
+    valor4= parseInt(Math.random()*100) 
+    valor5= parseInt(Math.random()*100) 
+    write(valor)
+    write(valor2)
+    write(valor3)
+    write(valor4)
+    write(valor5)
+    residuo=valor%2
+    if (residuo==0){
+        write("El primer numero es par: ",valor)
+    }else {
+        write("El primer numero es impar: ",valor) 
+    } 
+    if (valor>0){
+        write("El primer numero es positivo: ",valor)
+    }else {
+    write("El primer numero es negativo ",valor) 
+    }
+    residuos=valor5%3
+    if(residuos==1 ){
+        write("El ultimo numero es par  ",valor5)
+    }else{
+    write("El ultimo numero es impar  ",valor5)
+    }
+    if (valor5>0){
+        write("El ultimo numero es positivo: ",valor5)
+    }else {
+    write("El ultimo numero es negativo ",valor5) 
     }
 }
 valorAleatorio()

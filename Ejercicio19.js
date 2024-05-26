@@ -7,23 +7,22 @@
 const read = require("prompt-sync")();
 const write = console.log
 
-function cadenaUltimo() {
-    const cadena1 = "Uno, es el primer numero de la infinita cantidad de numeros que hay."
-    const cadena2 = "1, es el primer numero de la infinita cantidad de numeros que hay." 
-    let vocal = 0
-
-    write ("cadena.1:", cadena1)
-    write ("cadena.2:", cadena2)
+function verificarVocal() {
+ 
+   
+        let caracter = ""
+        write("Ingrese una vocal:")
+        caracter = (read())
+        if (caracter=="a" || caracter=="e" || caracter=="i" || caracter=="o" || caracter=="u") {
+           write( "es una vocal")
+           write(caracter)
+        } else if (caracter=="a" || caracter=="b" || caracter=="c" || caracter=="d" || caracter=="e"|| caracter=="f"
+        || caracter=="g"|| caracter=="h"|| caracter=="i"|| caracter=="j"|| caracter=="k"|| caracter=="l"|| caracter=="m"
+        || caracter=="o"|| caracter=="p"|| caracter=="q"|| caracter=="r"|| caracter=="s"|| caracter=="t"|| caracter=="u"
+        || caracter=="v"|| caracter=="w"|| caracter=="x"|| caracter=="y"|| caracter=="z") {
+           write("no es una vocal")
+        }
+     }
+     
     
-    write ("Ingrese el numero de la cadena:");
-    vocal = parseFloat(read())
-    
-    if (vocal === 1) {
-        write ("El primer caracter si es una vocal:", cadena1[0])
-    }
-    else {
-        write ("El primer caracter no es una vocal:", cadena2[0])
-    }
-
-}
-cadenaUltimo()
+     verificarVocal()

@@ -17,21 +17,20 @@
 
 
 
-const read = require("prompt-sync")();
-const write = console.log;
+const read = require("prompt-sync")()
+const write = console.log
 
-function calle() {
-    let direccion = [5],direcciones
-    write("direccion cualquiera pulse enter")
-    direcciones=(read())
-        direccion[0]="Avenida primavera"
-        direccion[1]="Avenida 20 de marzo"
-        direccion[2]="Avenida febres cordero"
-        direccion[3]="Avenida 12 de julio"
-        direccion[4]="Avenida 13 de octubre"
-        write("la primera direccion: ",direccion[0])
-        write("la segunda direccion: ",direccion[2])
-        write("la tercera direccion: ",direccion[4])
+function direcCarac() {
+    let direccion = read("Ingrese una dirección: ")
+    console.log("Dirección:", direccion)
+    console.log("Primer carácter:", direccion[0])
+    
+    let longitud = direccion.length
+    let caracterMedio = longitud % 2 === 0 ? direccion[(longitud / 2) - 1] : direccion[(longitud - 1) / 2];
+    console.log("Carácter del medio:", caracterMedio)
+    
+    console.log("Último carácter:", direccion[longitud - 1])
 }
-    calle()
+
+direcCarac()
 

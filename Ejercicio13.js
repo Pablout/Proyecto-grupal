@@ -18,12 +18,25 @@
 //        FinSi
 // La informacion de las variables procesadas
 // Salida: 
-const nombres = ["Juan", "María", "Pedro", "Ana", "Luis"]
+const read = require("prompt-sync")()
 const write = console.log
 
-
-write("Primer nombre:", nombres[4])
-write("Segundo nombre:", nombres[3])
-write("Tercer nombre:", nombres[2])
-write("Cuarto nombre:", nombres[1])
-write("Último nombre:", nombres[0])
+function nombres() {
+    let numero=0
+    let nombre = [6]
+    write("ingrese un numero")
+    numero=parseFloat(read())
+    if (numero>=0 && numero<=6){
+        nombre[0]="Juan"
+        nombre[1]="Felipe"
+        nombre[2]="Pedro"
+        nombre[3]="Maria"
+        nombre[4]="Fernanda"
+        Nombres = nombre[numero]
+        write("El numero", numero, "El nombre",Nombres)
+    }else{
+        write("Número de día inválido. Por favor, ingrese un número del 0 al 5.")
+    }
+        write("gracias por consultar")
+    }
+    nombres()
